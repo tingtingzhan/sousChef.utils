@@ -2,5 +2,6 @@
 
 export(fmtURL)
 export(sys_call_name)
+export(zero.omit)
 import(methods)
 importFrom(cli,style_hyperlink)
