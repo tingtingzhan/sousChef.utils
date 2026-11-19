@@ -2,9 +2,13 @@
 
 S3method(key,default)
 S3method(key,name)
+export(.cli_run)
 export(fmtURL)
 export(key)
 export(sys_call_name)
 export(zero.omit)
 import(methods)
-importFrom(cli,style_hyperlink)
+importFrom(cli,
+  format_inline,
+  style_hyperlink
+)
