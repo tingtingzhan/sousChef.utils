@@ -8,6 +8,7 @@ export(ansiURL)
 export(fmtURL)
 export(key)
 export(sys_call_name)
+export(waterEvap)
 export(zero.omit)
 import(methods)
 importFrom(cli,
