@@ -18,14 +18,3 @@ fmtURL <- \(x, fmt, text, ...) {
 }
 
 
-
-
-
-add_tool_url <- \(x, name, brand, ...) {
-  v <- x[[name]]
-  if (!length(v)) return(x)
-  x$name <- v |>
-    fmtURL(text = paste(brand, x[['name']]), ...)
-  x[[name]] <- NULL
-  return(x)
-}
