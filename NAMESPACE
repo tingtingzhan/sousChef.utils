@@ -3,12 +3,14 @@
 S3method(key,default)
 S3method(key,name)
 export(.cli_run)
+export(ansiURL)
 export(fmtURL)
 export(key)
 export(sys_call_name)
 export(zero.omit)
 import(methods)
 importFrom(cli,
+  ansi_has_any,
   format_inline,
   style_hyperlink
 )
