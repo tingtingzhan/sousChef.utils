@@ -2,6 +2,7 @@
 
 S3method(key,default)
 S3method(key,name)
+S3method(waterEvap,default)
 export(.cli_run)
 export(ansiURL)
 export(fmtURL)
