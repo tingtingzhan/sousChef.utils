@@ -2,9 +2,9 @@
 % Please edit documentation in R/fmtURL.R
 \name{fmtURL}
 \alias{fmtURL}
-\title{fmtURL}
+\title{\code{\link[=fmtURL]{fmtURL()}}}
 \usage{
-fmtURL(x, fmt, text, ...)
+fmtURL(x, fmt, text = x, ...)
 }
 \arguments{
 \item{x}{\link[base]{character} scalar}
@@ -16,5 +16,10 @@ fmtURL(x, fmt, text, ...)
 \item{...}{additional parameters, currently of no use}
 }
 \description{
-fmtURL
+\code{\link[=fmtURL]{fmtURL()}}
+}
+\examples{
+'da_hsN9Y4V0' |>
+ fmtURL(fmt = 'https://youtu.be/\%s')
+
 }
