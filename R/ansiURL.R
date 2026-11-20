@@ -2,12 +2,12 @@
 
 #' @title [ansiURL()]
 #' 
-#' @param x ..
+#' @param x \link[base]{character} scalar
 #' 
 #' @examples
 #' ansiURL('https://www.google.com')
 #' 
-#' @importFrom cli ansi_has_any
+#' @importFrom cli ansi_has_any style_hyperlink
 #' @export
 ansiURL <- \(x) {
   if (length(x) != 1L) stop()

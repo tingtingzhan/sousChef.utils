@@ -4,7 +4,7 @@
 \alias{.cli_run}
 \title{Create \code{.run} \link[cli]{cli_text}}
 \usage{
-.cli_run(text, pkg, fun, ...)
+.cli_run(text, pkg = "base", fun, ...)
 }
 \arguments{
 \item{text}{\link[base]{character} scalar}
@@ -21,6 +21,11 @@ Create \code{.run} \link[cli]{cli_text}
 \examples{
 foo = \() print('hello world')
 .cli_run(text = 'foo', pkg = 'sousChef.utils', fun = 'foo') |> cat()
+
+.cli_run(text = 'Current Time', fun = 'Sys.time') |> cat() # "Security considerations"
+
+# https://cli.r-lib.org/reference/links.html?q=.run#click-to-run-code
+.cli_run(text = 'Snapshot', pkg = 'testthat', fun = 'snapshot_review') |> cat()
   
 }
 \references{

@@ -18,20 +18,31 @@
 #' @examples
 #' foo = \() print('hello world')
 #' .cli_run(text = 'foo', pkg = 'sousChef.utils', fun = 'foo') |> cat()
+#' 
+#' .cli_run(text = 'Current Time', fun = 'Sys.time') |> cat() # "Security considerations"
+#' 
+#' # https://cli.r-lib.org/reference/links.html?q=.run#click-to-run-code
+#' .cli_run(text = 'Snapshot', pkg = 'testthat', fun = 'snapshot_review') |> cat()
 #'   
 #' @importFrom cli format_inline   
 #' @export
-.cli_run <- \(text, pkg, fun, ...) {
+.cli_run <- \(text, pkg = 'base', fun, ...) {
   
   ns <- pkg |>
     asNamespace()
   
   is_exported <- fun %in% getNamespaceExports(ns)
   is_unexported <- !is_exported && exists(fun, where = ns, inherits = FALSE)
-  in_GlobalEnv <- !is_unexported && exists(fun, where = .GlobalEnv)
+  in_GlobalEnv <- if (pkg %in% c('base')) {
+    # ?base::* functions are in .GlobalEnv
+    FALSE  
+  } else {
+    !is_unexported && exists(fun, where = .GlobalEnv)   }
   
   if (in_GlobalEnv) {
-    z <- sprintf(fmt = '{.run [%s](%s())}', text, fun) |>
+    z <- sprintf(
+      fmt = '{.run [%s](%s())}', text, fun
+    ) |>
       format_inline()
     # does not work.. as.Date('2026-11-05')
     return(z)

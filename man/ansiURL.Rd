@@ -7,7 +7,7 @@
 ansiURL(x)
 }
 \arguments{
-\item{x}{..}
+\item{x}{\link[base]{character} scalar}
 }
 \description{
 \code{\link[=ansiURL]{ansiURL()}}
