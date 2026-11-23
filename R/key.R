@@ -26,7 +26,7 @@ key.name <- \(x) {
 key.default <- \(x) {
   # \linkS4class{recipe}, \linkS4class{nutrition}
   x@call |>
-    key() # sousChef.utils:::key.name
+    key.name()
 }
 
 
