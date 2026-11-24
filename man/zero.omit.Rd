@@ -2,16 +2,20 @@
 % Please edit documentation in R/zero.omit.R
 \name{zero.omit}
 \alias{zero.omit}
-\title{\code{\link[=zero.omit]{zero.omit()}}}
+\title{Omit Near-Zero Elements}
 \usage{
-zero.omit(x)
+zero.omit(x, tol = .Machine$double.eps, ...)
 }
 \arguments{
 \item{x}{\link[base]{numeric} \link[base]{vector}}
+
+\item{tol}{\link[base]{numeric} scalar, default value is \code{.Machine$double.eps}}
+
+\item{...}{additional parameters, currently not in use}
 }
 \description{
-\code{\link[=zero.omit]{zero.omit()}}
+To omit the near-zero elements.
 }
 \note{
-Nomenclature \link[stats]{na.omit}
+The function \code{\link[=zero.omit]{zero.omit()}} is named after the function \link[stats]{na.omit}.
 }

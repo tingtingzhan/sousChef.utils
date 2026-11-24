@@ -13,7 +13,7 @@ sys_call_name(...)
 The function \code{\link[=sys_call_name]{sys_call_name()}} returns a \link[base]{name}.
 }
 \description{
-The \link[base]{name} part of the \link[base]{sys.call}.
+The \link[base]{function} \link[base]{name} part of the \link[base]{sys.call}.
 }
 \examples{
 foo = \() {

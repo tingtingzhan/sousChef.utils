@@ -21,6 +21,9 @@ key.name <- \(x) {
   z[length(z)]
 }
 
+
+
+
 #' @rdname key
 #' @export
 key.default <- \(x) {
@@ -28,6 +31,23 @@ key.default <- \(x) {
   x@call |>
     key.name()
 }
+
+
+
+
+
+
+
+
+#' @title [waterEvap()]
+#' 
+#' @param x see **Usage**
+#' 
+#' @export
+waterEvap <- \(x) UseMethod(generic = 'waterEvap')
+
+#' @export
+waterEvap.default <- \(x) 0
 
 
 

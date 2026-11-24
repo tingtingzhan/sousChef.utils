@@ -3,7 +3,7 @@
 #' @title \link[base]{name} Part of \link[base]{sys.call}
 #' 
 #' @description
-#' The \link[base]{name} part of the \link[base]{sys.call}.
+#' The \link[base]{function} \link[base]{name} part of the \link[base]{sys.call}.
 #' 
 #' @param ... parameters of the function \link[base]{sys.call}
 #' 
