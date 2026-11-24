@@ -17,7 +17,7 @@
 #' 
 #' @examples
 #' foo = \() print('hello world')
-#' .cli_run(text = 'foo', pkg = 'sousChef.utils', fun = 'foo') |> cat()
+#' .cli_run(text = 'foo', fun = 'foo') |> cat()
 #' 
 #' .cli_run(text = 'Current Time', fun = 'Sys.time') |> cat() # "Security considerations"
 #' 
@@ -33,11 +33,7 @@
   
   is_exported <- fun %in% getNamespaceExports(ns)
   is_unexported <- !is_exported && exists(fun, where = ns, inherits = FALSE)
-  in_GlobalEnv <- if (pkg %in% c('base')) {
-    # ?base::* functions are in .GlobalEnv
-    FALSE  
-  } else {
-    !is_unexported && exists(fun, where = .GlobalEnv)   }
+  in_GlobalEnv <- !is_exported && !is_unexported && identical(environment(get(fun)), .GlobalEnv)
   
   if (in_GlobalEnv) {
     z <- sprintf(
@@ -53,7 +49,7 @@
   } else if (is_unexported) {
     fmt <- '{.run [%s](%s:::%s())}'
     # does not work.. as.Date('2026-11-05')
-  }
+  } else stop('shouldnt come here')
 
   sprintf(fmt = fmt, text, pkg, fun) |>
     format_inline() # must!

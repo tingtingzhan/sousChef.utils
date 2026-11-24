@@ -20,7 +20,7 @@ Create \code{.run} \link[cli]{cli_text}
 }
 \examples{
 foo = \() print('hello world')
-.cli_run(text = 'foo', pkg = 'sousChef.utils', fun = 'foo') |> cat()
+.cli_run(text = 'foo', fun = 'foo') |> cat()
 
 .cli_run(text = 'Current Time', fun = 'Sys.time') |> cat() # "Security considerations"
 
